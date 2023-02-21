@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact form</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <center>
+     <div class="customer">
+        <h1>CONTACT FORM</h1>
+        <form  id="fom" action="" method="post" onsubmit=" return false;">
+            <div>
+                <label for="Name">CUSTOMER NAME:</label>
+                <input type="text" placeholder="Enter your name" id="name" value="">
+                <p id="p1" class="box"></p>
+            </div><br>
+            <div>
+                <label for="number">CUSTOMER NUMBER:</label>
+                <input type="text" placeholder="Enter your number" id="number" value="" maxlength="10" minlength="10">
+                <p id="p2" class="box"></p>
+            </div><br>
+            <div>
+                <label for="address">ADDRESS:</label><br>
+                <input type="text" placeholder="Enter your address" id="address" value="">
+                <p id="p3" class="box"></p>
+            </div><br>
+            <input type="hidden" id="hiddenid" value="">
+            <button type="submit" id="sub" onclick=" validate()">submit</button>
+            <input type="reset" id="reset" value="reset">
+        
+        
+        
+        
+        </form>
+    </center>
+     </div><br><br>
+
+      <input type="hidden" id="count" value="2">
+<center>
+    
+     <table class="tab" >
+        <thead>
+            <tr>
+                <th>CUSTOMER NAME </th>
+                <th>CUSTOMER NUMBER </th>
+                <th>CUSTOMER ADDRESS</th>
+            </tr>
+            
+        </thead>
+          <tbody id="records">
+            <tr>
+                <td id="nam1">KARNAN</td>
+                <td id="num1">9876543221</td>
+                <td id="add1">MADURAI</td>
+                <td><button class="btn" onclick="editfun('1')">EDIT</button></td>
+            </tr>
+            <tr>
+                <td id="nam2">AFSAR</td>
+                <td id="num2">123456789</td>
+                <td id="add2">THEPPAKULAM</td>
+                <td><button class="btn" onclick="editfun('2')">EDIT</button></td>
+            </tr>
+
+
+
+
+
+          </tbody>
+     </table>
+    
+    </center>
+     <script>
+        function editfun(id){
+    document.getElementById("hiddenid").value=id;
+    detail=document.getElementById("nam"+id).innerHTML;
+    document.getElementById("name").value=detail;
+    detail1=document.getElementById("num"+id).innerHTML;
+    document.getElementById("number").value=detail1;
+    detail2=document.getElementById("add"+id).innerHTML;
+    document.getElementById("address").value=detail2;
+
+}
+
+
+     </script>
+    
+    <script src="contact.js"></script>
+</body>
+</html>

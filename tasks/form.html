@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        table,td,th{
+            border: 2px solid black;
+        }
+        .form{
+            border: 5px solid red;
+            height: 200px;
+            width: 200px;
+            padding: 10px;
+        }
+        .design{
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <h2>Form creation</h2>
+        </div>
+    <form action="" class="form" onsubmit="return false">
+        <lebel for="">Student Name:</lebel><br>
+        <input type="text" id="student" placeholder="Enter your name" autocomplete="off" value=""><br>
+        <span id="err_name" class="design">*filling the name</span><br>
+        <label for="">Resgister Number:</label><br>
+        <input type="text" id="number" placeholder="Enter your number" autocomplete="off" value=""><br>
+        <span id="err_no" class="design">*filling the number</span><br>
+        <label for="">Sex type:</label><br>
+        <input type="text" id="sex" placeholder="Enter your sex" autocomplete="off" value=""><br>
+        <span id="err_sex" class="design">*fill your sex</span><br>
+        <button input type="submit" id="submit" onclick="validate()">submit</button>
+        <button input type="reset" id="reset">reset</button>
+        <input type="hidden" id="hidden id" value="">
+        
+    </form>    
+    </div>
+    <input type="hidden" id="count" value="2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>student name</th>
+                <th>resister number</th>
+                <th>sex type</th>
+    
+            </tr>
+            
+        </thead>
+            <tbody id="record">
+                <tr>
+                <td id="name1">raj</td>
+                <td id="register1">123</td>
+                <td id="male">male</td>
+                <td> <button onclick="editfun()">edit</button></td>
+            </tr>
+            </tbody>
+    </table>
+
+
+       <script src="form.js"></script>
+
+       <script>
+        function editfun(id){
+            document.getElementById("hidden id").value=id;
+            book=document.getElementById("name"+id).innerHTML;
+            document.getElementById("student").value=book;
+            
+            name1=document.getElementById("register"+id).innerHTML;
+            document.getElementById("number").value=name1;
+            name2=document.getElementById("male"+id).innerHTML;
+            document.getElementById("sex").value=name2;
+         }
+        
+    
+       </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio button validation </title>
+</head>
+<body>
+    <form action="" onsubmit="return false">
+        <label for="male">male</label>
+       <input type="radio" id="male" value="male" name="gender">
+       <p id="p1"></p>
+       
+       <label for="female">female</label>
+       <input type="radio" id="female" value="female" name="gender">
+       <p id="p2"></p>
+       <p id="p3"></p>
+    
+       <button onclick="check()">send</button>
+       
+  
+
+       
+    </form>
+    <script>
+        function check(){
+            let rdb1= document.getElementById("male");
+            let rdb2= document.getElementById("female");
+            if(rdb1.checked == true){
+                (rdb1.value)
+                //document.getElementById("p1") .innerHTML="male";
+                
+            }
+            else if (rdb2.checked == true ){
+            (rdb2.value)
+            //document.getElementById("p2") .innerHTML="female";
+            } else{
+                document.getElementById("p1") .innerHTML="plese select any one";
+            }
+
+        }
+    </script>
+</body>
+</html>
